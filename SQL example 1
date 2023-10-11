@@ -1,0 +1,19 @@
+Execution finished without errors.
+Result: 10 rows returned in 40ms
+At line 1:
+/*
+Created By Vivian Hill
+Created On 10/08/2023
+Description: This query displays all customers first, last name and email addresses
+*/
+
+SELECT
+ FirstName AS [Customer FirstName],
+ LastName AS 'Customer LastName',
+ Email AS Email
+FROM
+ Customer
+ ORDER BY
+  FirstName ASC,
+  LastName DESC
+  LIMIT 10
