@@ -1,5 +1,5 @@
 Execution finished without errors.
-Result: 413 rows returned in 214ms
+Result: 413 rows returned in 132ms
 At line 1:
 /*
 Created By: Vivian Hill
@@ -17,6 +17,22 @@ Low Purchase-       Between $2.00 and $6.99
 Target Purchase-   Between $7.00 and $15.00
 Top Performer-      Above $15.00
 */
+
+SELECT
+InvoiceDate,
+BillingAddress,
+BillingCity,
+total,
+CASE
+WHEN total < 2.00 THEN 'Baseline Purchase'
+WHEN total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+WHEN total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+ELSE 'Top Performer'
+END AS Purchase
+FROM
+Invoice
+ORDER BY
+BillingCity
 
 SELECT
 InvoiceDate,
