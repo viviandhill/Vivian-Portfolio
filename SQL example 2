@@ -1,0 +1,20 @@
+Execution finished without errors.
+Result: 111 rows returned in 76ms
+At line 1:
+/*
+Created By: Vivian Hill
+Created on: 10/11/2023
+Description: How many invoices exist between $1.98 and $5.00?
+*/
+
+SELECT
+ InvoiceDate,
+ BillingAddress,
+ BillingCity,
+ total
+ FROM
+ Invoice
+ WHERE
+ total = 1.98
+ ORDER BY
+ InvoiceDate
